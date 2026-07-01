@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao Diện Phác Thảo Có Hiển Thị Ảnh</title>
+    <style>
+        /* RESET CODE: Xóa khoảng cách mặc định của trình duyệt */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* NAVBAR: Thanh điều hướng / Menu chính */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 5%;
+            color: white;
+        }
+        
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* HERO SECTION: Khu vực banner chính giữa */
+        .hero {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            color: #ecf0f1;
+        }
+
+        /* CONTAINER & GRID: Bố cục các cột nội dung */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Mặc định hiển thị 3 cột trên màn hình máy tính (Desktop) */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* THẺ HIỂN THỊ ẢNH: Định dạng kích thước ảnh bằng CSS */
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Giúp ảnh không bị méo khi co giãn */
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        /* FOOTER: Phần chân trang */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* ======================================================= */
+        /* CHẾ ĐỘ XEM DI ĐỘNG (MOBILE VIEW) - Responsive Design    */
+        /* ======================================================= */
+        @media (max-width: 768px) {
+            /* Chuyển menu thành hàng dọc trên điện thoại */
+            .navbar-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                margin: 0 10px;
+            }
+
+            /* CHUYỂN ĐỔI QUAN TRỌNG: Từ 3 cột chuyển thành 1 cột xếp dọc */
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-content">
+            <div class="logo">MyWeb</div>
+            <nav class="nav-links">
+                <a href="#">Trang chủ</a>
+                <a href="#">Giới thiệu</a>
+                <a href="#">Dịch vụ</a>
+                <a href="#">Liên hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Chào mừng đến với Trang Web của tôi</h1>
+        <p>Đây là giao diện mẫu hoàn chỉnh có hiển thị hình ảnh minh họa thực tế.</p>
+    </section>
+
+    <main class="container">
+        <div class="grid-layout">
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=1" alt="Hình ảnh minh họa 1" class="card-image">
+                <h3>Dự án thiết kế 1</h3>
+                <p>Mô tả chi tiết về dự án đầu tiên. Hình ảnh phía trên được lấy trực tuyến giúp hiển thị trực quan cấu trúc bố cục đúng theo bản phác thảo.</p>
+            </div>
+            
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=2" alt="Hình ảnh minh họa 2" class="card-image">
+                <h3>Dự án thiết kế 2</h3>
+                <p>Mô tả chi tiết về dự án thứ hai. Bản phác thảo này giúp thầy và các bạn thấy rõ cách sắp xếp hình ảnh cân đối với phần chữ bên dưới.</p>
+            </div>
+            
+            <div class="card">
+                <img src="https://picsum.photos/400/300?random=3" alt="Hình ảnh minh họa 3" class="card-image">
+                <h3>Dự án thiết kế 3</h3>
+                <p>Mô tả chi tiết về dự án thứ ba. Đảm bảo hiển thị ảnh sắc nét, bo góc mềm mại và tự động thu nhỏ vừa vặn khi chuyển sang màn hình điện thoại.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Tên Của Em - Bài tập Xây dựng Ứng dụng Web</p>
+    </footer>
+
+</body>
+</html>
